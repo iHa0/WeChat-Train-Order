@@ -1,0 +1,37 @@
+<!--pages/address/editDeliverAddress/editDeliverAddress.wxml-->
+<view class="sub-con">
+  <view class="o-con mt16">
+
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex-hd f34">姓名</text>
+      <view class="wx-flex-bd f34">
+        <input type="text" class="input-txt" placeholder="请输入取票人姓名" placeholder-class="c-gray" value="{{ name }}" bindinput="userNameInput" />
+      </view>
+    </view>
+
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex-hd f34">订单号</text>
+      <view class="wx-flex-bd f34">
+        <input type="text" class="input-txt" placeholder="请输入取票人订单号"  placeholder-class="c-gray" value="{{ phone }}" bindinput="phoneInput" />
+      </view>
+    </view>
+
+   
+
+  </view>
+
+  <view class="mt60 btn-area">
+      <button type="primary" bindtap="default" hover-class="other-button-hover" class="mb30" bindtap="saveAddress"> 保存 </button>
+      <button type="default"  bindtap="delSendAddress" hover-class="other-button-hover"> 删除 </button>
+  </view>
+</view>
+<view class="pop-mask" hidden="{{ isHidden }}"></view>
+<view class="pop-box"  hidden="{{ isHidden }}">
+    <view class="wx-flex just-center one-line f36">
+        <text>是否确认删除该条地址</text>
+    </view>
+    <view class="wx-flex pop-btn-area">
+        <text class="wx-flex-bd pop-btn" bindtap="delCancel">取消</text>
+        <text class="wx-flex-bd pop-btn c-green" bindtap="delConfirm">确认</text>
+    </view>
+</view>

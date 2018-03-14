@@ -1,0 +1,43 @@
+<!--pages/order/order.wxml-->
+<import src="../../common/header.wxml" />
+<template is="header" data="{{wOrder:'nav-item-cur'}}" />
+<!-- S 空 -->
+
+<view class="empty-box" wx:if="{{!orderList.length}}">
+  <view class="wx-flex-c align-c">
+    <image src="../../images/order_empty.png" class="order-empty"></image>
+    <text class="empty-text">暂无订单</text>
+  </view>
+</view>
+
+<!-- E 空 -->
+
+<!-- S 有 -->
+<view class="container">
+ 
+  <block wx:for="{{ orderList }}" wx:for-item="order">
+  <!-- S -->
+  <navigator url="../orderDetail/orderDetail?orderId={{order.id}}">
+  <view class="wx-flex-c order-list" bindtap="viewOrderD" data-orderid="{{ order.id }}">
+    <view class="wx-flex">
+      <text class="order-c1">订单编号：{{ order.order_sn }}</text>
+      <text class="order-status">{{ order.desc }}</text>
+    </view>
+    <view class="wx-flex order-list-pad">
+      <text class="user-info">收件人：{{ order.receiver }}  　　{{ order.tel }}</text>
+      <text class="o-arrow-r">{{ order.price }}</text>
+    </view>
+    <view>
+      <text class="order-c1">收件人地址：{{ order.address_xq }}</text>
+    </view>
+  </view>
+  </navigator>
+   <!-- E -->
+   </block>
+   
+   
+</view>
+<!-- E 有 -->
+<view class="phone-box">
+    <text bindtap="phoneCall">客服电话：0416-2551137</text>
+</view>

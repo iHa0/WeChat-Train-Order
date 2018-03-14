@@ -1,0 +1,123 @@
+<!--pages/addDeliverAddress/addDeliverAddress.wxml-->
+ <view class="btn-area pos-bot bod-box">
+    
+     <button type="primary" size="{{defaultSize}}" form-type="submit" hover-class="other-button-hover" bindtap="saveAddress"> 保存 </button>
+  </view>
+<view >
+  <view class="o-con mt1616">
+
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex-hd f34">姓名</text>
+      <view class="wx-flex-bd f34">
+        <input type="text" class="input-txt" placeholder="请输入乘车人姓名" placeholder-class="c-gray" value="{{ userName1 }}" bindinput="userNameInput1" />
+      </view>
+    </view>
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex-hd f34">订单号</text>
+      <view class="wx-flex-bd f34">
+        <input type="text" class="input-txt" placeholder="填写订单号（如EC66663333）" placeholder-class="c-gray" value="{{ orderId1 }}" bindinput="orderIdInput1" />
+      </view>
+    </view>
+
+
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex-hd f34">身份证</text>
+      <view class="wx-flex-bd f34">
+        <input type="idcard" class="input-txt" placeholder="请输入身份证号码" placeholder-class="c-gray" value="{{ idNumber1 }}" bindinput="idNumberInput1" />
+      </view>
+    </view>
+
+
+
+    <view class="imagearea">
+      <image catchtap="choseimg" src="{{imgUrls}}"></image>
+      <image src="/pages/images/clear.png" class="clear" bindtap='removeimg'></image>
+    </view>
+    <text class="wx-flex-hd f34">上传图片（订单截图）</text>
+
+</view>
+<view class="o-con mt1616">
+
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex-hd f34">姓名2</text>
+      <view class="wx-flex-bd f34">
+        <input type="text" class="input-txt" placeholder="请输入取票人姓名2" placeholder-class="c-gray" value="{{ userName2 }}" bindinput="userNameInput2" />
+      </view>
+    </view>
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex-hd f34">订单号2</text>
+      <view class="wx-flex-bd f34">
+        <input type="text" class="input-txt" placeholder="填写订单号2（如EC66663333）" placeholder-class="c-gray" value="{{ orderId2 }}" bindinput="orderIdInput2" />
+      </view>
+    </view>
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex-hd f34">身份证2</text>
+      <view class="wx-flex-bd f34">
+        <input type="idcard" class="input-txt" placeholder="请输入身份证号码2" placeholder-class="c-gray" value="{{ idNumber2 }}" bindinput="idNumberInput2" />
+      </view>
+    </view>
+    <view class="imagearea">
+      <image catchtap="choseimg2" src="{{imgUrls2}}"></image>
+      <image src="/pages/images/clear.png" class="clear" bindtap='removeimg2'></image>
+    </view>
+    <text class="wx-flex-hd f34">上传图片（订单截图）</text>
+</view>
+<view class="o-con mt1616" style='margin-bottom: 200rpx'>
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex-hd f34">姓名3</text>
+      <view class="wx-flex-bd f34">
+        <input type="text" class="input-txt" placeholder="请输入取票人姓名3" placeholder-class="c-gray" value="{{ userName3 }}" bindinput="userNameInput3" />
+      </view>
+    </view>
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex-hd f34">订单号3</text>
+      <view class="wx-flex-bd f34">
+        <input type="text" class="input-txt" placeholder="填写订单号3（如EC66663333）" placeholder-class="c-gray" value="{{ orderId3 }}" bindinput="orderIdInput3" />
+      </view>
+    </view>
+    <view class="wx-flex just-start o-teaser bod-b">
+      <text class="wx-flex-hd f34">身份证3</text>
+      <view class="wx-flex-bd f34">
+        <input type="idcard" class="input-txt" placeholder="请输入身份证号码3" placeholder-class="c-gray" value="{{ idNumber3 }}" bindinput="idNumberInput3" />
+      </view>
+    </view>
+    <view class="imagearea">
+      <image catchtap="choseimg3" src="{{imgUrls3}}"></image>
+      <image src="/pages/images/clear.png" class="clear" bindtap='removeimg3'></image>
+    </view>
+    <text class="wx-flex-hd f34">上传图片（订单截图）</text>
+
+    <view class="wx-flex just-start o-teaser bod-b">
+
+    </view>
+
+
+  </view>
+
+
+<!--   
+  <view class="btn-area pos-bot bod-box">
+    <button type="primary" size="{{defaultSize}}" form-type="submit" hover-class="other-button-hover" bindtap="saveAddress"> 保存 </button>
+
+  </view> -->
+
+
+
+
+
+
+  
+  
+ <view class="btn-area pos-bot bod-box">
+    
+     <button type="primary" size="{{defaultSize}}" form-type="submit" hover-class="other-button-hover" bindtap="saveAddress"> 保存 </button>
+  </view>  
+
+
+
+  <!-- S 提示 -->
+  <view class="o-tip bod-box" hidden="{{ toast }}" style="top:0;">
+    <text>{{ toastTxt }}</text>
+  </view>
+  <!-- E 提示 -->
+</view>

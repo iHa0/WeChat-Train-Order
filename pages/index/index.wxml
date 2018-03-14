@@ -1,0 +1,115 @@
+<!--index.wxml-->
+<import src="../common/header.wxml" />
+<template is="header" data="{{wSend:'nav-item-cur'}}" />
+
+<view class="container">
+
+  <!-- S 寄 --> 
+  <view class="mt16 o-con">
+
+    <view class="wx-flex o-teaser align-str bod-b">
+      <view class="wx-flex wx-flex-bd just-start" bindtap="fromW">
+        <image src="../images/w_send.png" class="send-icon" />
+        <text class="c-gray f34" hidden="{{ fromWh }}">票面信息</text>
+        <view class="wx-flex-c" hidden="{{ !fromWh }}">
+          <text class="f32 c-g999">{{ name }}　　　{{ orderId }}</text>
+          <text class="f34 o-adr-e">{{idNumber}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="wx-flex o-teaser align-str bod-b" hidden="{{show2}}">
+      <view class="wx-flex wx-flex-bd just-start" bindtap="fromW">
+        <image src="../images/w_send.png" class="send-icon" />
+        <text class="c-gray f34" hidden="{{ fromWh }}">票面信息</text>
+        <view class="wx-flex-c" hidden="{{ !fromWh }}">
+          <text class="f32 c-g999">{{ nameTwo }}　　　{{ orderIdTwo }}</text>
+          <text class="f34 o-adr-e">{{idNumberTwo}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="wx-flex o-teaser align-str bod-b" hidden="{{show3}}">
+      <view class="wx-flex wx-flex-bd just-start" bindtap="fromW">
+        <image src="../images/w_send.png" class="send-icon" />
+        <text class="c-gray f34" hidden="{{ fromWh }}">票面信息</text>
+        <view class="wx-flex-c" hidden="{{ !fromWh }}">
+          <text class="f32 c-g999">{{ nameThr }}　　　{{ orderIdThr }}</text>
+          <text class="f34 o-adr-e">{{idNumberThr}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="wx-flex o-teaser align-str">
+      <!-- <view class="wx-flex wx-flex-bd just-start" bindtap="toW"> -->
+      <view class="wx-flex wx-flex-bd just-start" bindtap="receiverAddress">
+        <image src="../images/w_re.png" class="send-icon" />
+        <text class="c-gray f34" hidden="{{ toWh }}">收件人地址</text>
+
+        <view class="wx-flex-c" hidden="{{ !toWh }}">
+          <text class="f32 c-g999">{{ name2 }}　　　{{ phone2 }}</text>
+          <text class="f34 o-adr-e">{{ address2 }}</text>
+        </view>
+      </view>
+      <text class="c-green f32 o-adr-s wx-flex" bindtap="receiverAddress">地址簿</text>
+    </view>
+  </view>
+  <!-- E 寄 -->
+
+  <!-- S 选择 -->
+  <view class="mt16 o-con" style='margin-bottom: 200rpx'>
+    <!-- 1 -->
+    <view class="wx-flex o-teaser align-str bod-b" bindtap="comingSoon" >
+      <text class="c-black f34 wx-flex">服务类别</text>
+      <view class="wx-flex">
+        <!--<text class="c-g888 f32 o-cho-btn">请选择</text>-->
+        <text bindtap="bindTimeChange" class="c-black f32 o-cho-btn">标准服务</text>
+        <!-- <text bindtap="bindTimeChange" class="c-black f32 o-cho-btn">{{ date }} {{ time }}</text> -->
+        <text class="o-arrow-r"></text>
+      </view>
+
+    </view>
+   
+
+    <!-- <view class="">
+      <view class="imagearea" wx:for="{{imgUrls}}" wx:for-item="obj" wx:for-index="ind">
+        <image src="/pages/images/clear.png" class="clear" bindtap='removeimg' data-index="{{ind}}"></image>        
+        <image src='{{obj}}'></image>
+      </view>
+      <view class="uploadarea" bindtap='choseimg'>
+      </view>
+    </view> -->
+
+    <!-- S 期待上门时间picker-view-->
+    <!-- <view wx:if="{{isTime}}" class="modal">
+      <view class="bod-box wx-flex modal-header">
+        <text class="c-gray" bindtap="close">取消</text>
+        <text class="c-green" bindtap="close">确定</text>
+      </view>
+      <picker-view indicator-style="height: 50px;" value="{{value}}" bindchange="bindChange" class="modal-body">
+
+        <picker-view-column>
+          <view wx:for="{{dates}}" style="line-height: 50px">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{times}}" style="line-height: 50px">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view> -->
+  </view>
+  <!-- E 选择 -->
+  <view class="btn-area pos-bot bod-box">
+    <view class="tc mb30" hidden="{{ false }}">
+      <text class="f36 c-red">预估订单金额:￥8</text>
+    </view>
+    <view class="tc mb30" >
+      <text class="f30 c-red">配送时间：下单时间距离票面开车时间不少于36小时</text>
+      <text>\n</text>
+           <text class="f30 c-red">配送范围：距离锦州站10公里以内</text>
+    </view>
+    <button type="primary" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover" bindtap="confirmOrder"> 确认下单 </button>
+  </view>
+
+  <!-- S 提示 -->
+  <view class="o-tip bod-box" hidden="{{ toast }}">
+    <text>{{ toastTxt }}</text>
+  </view>
+  <!-- E 提示 -->
+</view>
